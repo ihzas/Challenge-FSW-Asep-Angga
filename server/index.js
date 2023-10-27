@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
 
     if (pathName === "/") {
         // Serve halaman Landing Page
-        fs.readFile("index.html", (err, data) => {
+        fs.readFile(".public/index.html", (err, data) => {
             if (err) {
                 res.writeHead(404);
                 res.end("File not found");
@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
         });
     } else if (pathName === "/cars") {
         // Serve halaman Cari Mobil
-        fs.readFile("cariMobil.html", (err, data) => {
+        fs.readFile(".public/cariMobil.html", (err, data) => {
             if (err) {
                 res.writeHead(404);
                 res.end("File not found");

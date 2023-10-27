@@ -19,21 +19,27 @@ class App {
     const selectedTime = document.getElementById("waktu").value;
     const selectedPassengers = document.getElementById("jumlahPenumpang").value;
 
+    const timeParts = selectedTime.split(':');
+    const date = new Date();
+    date.setHours(parseInt(timeParts[0]));
+    date.setMinutes(parseInt(timeParts[1]));
+
+
     console.log(selectedDate);
 
 
     const filterFunction = (car) => {
-      console.log(car);
-      console.log(selectedTime);
-      console.log(new Date(Number(selectedTime)).getHours());
-      console.log(new Date(car.availableAt).getHours());
+
+      // console.log(date.getHours());
+      console.log(selectedDate);
+      console.log(new Date(car.availableAt));
       // if (selectedDriverType && car.type !== selectedDriverType) {
       //   return false;
       // }
       if (selectedDate && new Date(car.availableAt) < new Date(selectedDate)) {
         return false;
       }
-      if (selectedTime && new Date(car.availableAt).getHours() !== new Date(Number(selectedTime)).getHours()) {
+      if (new Date(car.availableAt).getHours() !== date.getHours()) {
         return false;
       }
       if (selectedPassengers && car.capacity < parseInt(selectedPassengers)) {

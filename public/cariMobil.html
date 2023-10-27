@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Sabrina" />
+    <meta name="description" content="Lorem ipsum dolor sit amet" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title>Binar: Challenge 04</title>
+
+    <!-- Example CSS -->
+    <link href="./css/style.example.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <!-- Header -->
+      <div
+        class="position-relative"
+        style="height: 500px; background: #f1f3ff; width: 100%; z-index: -300">
+        <!-- Navbar -->
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- Left -->
+            <div class="navbar-brand">
+              <div class="bg-primary" style="width: 100px; height: 34px"></div>
+            </div>
+
+            <!-- Tampilkan tombol hamburger hanya pada tampilan tablet ke bawah -->
+            <button
+              class="navbar-toggler d-lg-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Offcanvas Menu -->
+            <div
+              class="offcanvas offcanvas-end d-lg-none"
+              tabindex="-1"
+              id="offcanvasRight"
+              aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Our Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Why Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Testimonial</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Original Navbar Content -->
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Our Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Why Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">FAQ</a>
+                </li>
+              </ul>
+              <button
+                class="btn btn-primary ml-2"
+                style="background: #5cb85f; border-radius: 2px; border: none">
+                Register
+              </button>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Hero -->
+        <div
+          class="d-flex flex-column justify-content-center align-items-center">
+          <div class="container mt-5">
+            <div class="row gap-lg-5 gap-sm-5 gap-xl-5 justify-content-between">
+              <!-- Kolom kiri -->
+              <div class="col-md-5 text-center text-md-left">
+                <h2 class="display-4" style="font-size: 36px; font-weight: 700">
+                  Sewa & Rental Mobil Terbaik di Kawasan (Lokasimu)
+                </h2>
+                <p class="lead" style="font-size: 14px; font-weight: 300">
+                  Selamat datang di Binar Car Rental. Kami menyediakan mobil
+                  kualitas terbaik dengan harga terjangkau. Selalu siap melayani
+                  kebutuhanmu untuk sewa mobil selama 24 jam.
+                </p>
+              </div>
+
+              <!-- Kolom kanan -->
+              <div class="col-md-6" style="margin-top: 90px">
+                <div
+                  class="position-absolute"
+                  style="
+                    background-color: #0d28a6;
+                    border-radius: 150px 0 0 0;
+                    height: 280px;
+                  ">
+                  <img
+                    src="./images/car.png"
+                    alt="car"
+                    class="img-fluid"
+                    style="transform: translateY(-70px)" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div
+        class="container search-container d-flex align-items-center justify-content-center"
+        style="margin-top: -40px">
+        <div class="d-flex mx-4 gap-5 justify-content-center align-items-end">
+          <div class="form-group">
+            <label for="tipe" class="label-f">Tipe Driver</label>
+            <div class="input-group custom-select">
+              <select class="form-select" id="tipe" name="tipe">
+                <option value="" disabled selected>Pilih Tipe Driver</option>
+                <option value="">Dengan Sopir</option>
+                <option value="">Lepas Kunci</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tanggal" class="label-f">Tanggal</label>
+            <input type="date" class="form-control" id="tanggal" />
+          </div>
+          <div class="form-group">
+            <label for="waktu" class="label-f">Waktu Jemput/Ambil</label>
+            <input type="time" class="form-control" id="waktu" />
+          </div>
+          <div class="form-group">
+            <label for="jumlahPenumpang" class="label-f"
+              >Jumlah Penumpang (Optional)</label
+            >
+            <input type="number" class="form-control" id="jumlahPenumpang" />
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-success"
+              id="load-btn"
+              style="border-radius: 2px; border: none">
+              Cari Mobil
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-main">
+        <div id="cars-container" class="cars-container"></div>
+      </div>
+
+      <!-- Footer -->
+      <div class="container mt-5 mb-5">
+        <div class="row">
+          <div class="col-md-3 mb-4 text-left">
+            <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+            <p>binarcarrental@gmail.com</p>
+            <p>081-233-334-808</p>
+          </div>
+
+          <div class="col-md-2 mb-4 text-left">
+            <p>Our services</p>
+            <p>Why Us</p>
+            <p>Testimonial</p>
+            <p>FAQ</p>
+          </div>
+
+          <div class="col-md-3 text-left mb-4">
+            <div class="mb-3">Connect with us</div>
+            <div class="d-flex gap-3 text-left">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                style="
+                  background-color: rgba(13, 40, 166, 1);
+                  border-radius: 50%;
+                  padding: 4px;
+                  width: 25px;
+                  height: 25px;
+                "
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none">
+                <path
+                  d="M15 1.66663H12.5C11.395 1.66663 10.3352 2.10561 9.55376 2.88701C8.77236 3.66842 8.33337 4.72822 8.33337 5.83329V8.33329H5.83337V11.6666H8.33337V18.3333H11.6667V11.6666H14.1667L15 8.33329H11.6667V5.83329C11.6667 5.61228 11.7545 5.40032 11.9108 5.24404C12.0671 5.08776 12.279 4.99996 12.5 4.99996H15V1.66663Z"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                style="
+                  background-color: rgba(13, 40, 166, 1);
+                  border-radius: 50%;
+                  padding: 4px;
+                  width: 25px;
+                  height: 25px;
+                "
+                viewBox="0 0 20 20"
+                fill="none">
+                <path
+                  d="M14.1666 1.66663H5.83329C3.53211 1.66663 1.66663 3.53211 1.66663 5.83329V14.1666C1.66663 16.4678 3.53211 18.3333 5.83329 18.3333H14.1666C16.4678 18.3333 18.3333 16.4678 18.3333 14.1666V5.83329C18.3333 3.53211 16.4678 1.66663 14.1666 1.66663Z"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M13.3334 9.47501C13.4362 10.1685 13.3178 10.8769 12.9948 11.4992C12.6719 12.1215 12.161 12.6262 11.5347 12.9414C10.9085 13.2566 10.1987 13.3663 9.50653 13.2549C8.81431 13.1436 8.17484 12.8167 7.67907 12.321C7.1833 11.8252 6.85648 11.1857 6.7451 10.4935C6.63371 9.8013 6.74343 9.09159 7.05865 8.46532C7.37386 7.83905 7.87853 7.32812 8.50086 7.00521C9.12319 6.68229 9.8315 6.56383 10.525 6.66667C11.2325 6.77158 11.8874 7.10123 12.3931 7.60693C12.8988 8.11263 13.2285 8.76757 13.3334 9.47501Z"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M14.5834 5.41663H14.5917"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                style="
+                  background-color: rgba(13, 40, 166, 1);
+                  border-radius: 50%;
+                  padding: 4px;
+                  width: 25px;
+                  height: 25px;
+                "
+                viewBox="0 0 20 20"
+                fill="none">
+                <path
+                  d="M19.1667 2.49996C18.3687 3.06285 17.4851 3.49338 16.55 3.77496C16.0482 3.19788 15.3812 2.78887 14.6392 2.60323C13.8973 2.41759 13.1163 2.46429 12.4018 2.737C11.6873 3.00972 11.0737 3.49529 10.6442 4.12805C10.2146 4.76082 9.98979 5.51024 10 6.27496V7.10829C8.53557 7.14626 7.08444 6.82147 5.77588 6.16283C4.46733 5.50419 3.34197 4.53215 2.50004 3.33329C2.50004 3.33329 -0.833292 10.8333 6.66671 14.1666C4.95048 15.3316 2.906 15.9157 0.833374 15.8333C8.33337 20 17.5 15.8333 17.5 6.24996C17.4993 6.01783 17.477 5.78629 17.4334 5.55829C18.2839 4.71953 18.8841 3.66055 19.1667 2.49996V2.49996Z"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                style="
+                  background-color: rgba(13, 40, 166, 1);
+                  border-radius: 50%;
+                  padding: 4px;
+                  width: 25px;
+                  height: 25px;
+                "
+                viewBox="0 0 20 20"
+                fill="none">
+                <path
+                  d="M3.33329 3.33337H16.6666C17.5833 3.33337 18.3333 4.08337 18.3333 5.00004V15C18.3333 15.9167 17.5833 16.6667 16.6666 16.6667H3.33329C2.41663 16.6667 1.66663 15.9167 1.66663 15V5.00004C1.66663 4.08337 2.41663 3.33337 3.33329 3.33337Z"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M18.3333 5L9.99996 10.8333L1.66663 5"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                style="
+                  background-color: rgba(13, 40, 166, 1);
+                  border-radius: 50%;
+                  padding: 4px;
+                  width: 25px;
+                  height: 25px;
+                "
+                viewBox="0 0 20 20"
+                fill="none">
+                <path
+                  d="M13.3333 9.16663V5.83329M17.5 1.66663H2.5V15H6.66667V18.3333L10 15H14.1667L17.5 11.6666V1.66663ZM9.16667 9.16663V5.83329V9.16663Z"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="row col-md-3">
+            <div class="col-12 text-left">
+              <p class="mb-0">Copyright Binar 2022</p>
+              <div
+                class="text-white mt-2"
+                style="
+                  width: 100px;
+                  height: 34px;
+                  background-color: rgba(13, 40, 166, 1);
+                "></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <button id="load-btn">Load</button> -->
+    <button id="clear-btn">Clear</button>
+
+    <!-- Example Javascript -->
+    <script></script>
+    <script type="text/javascript" src="./scripts/binar.js"></script>
+    <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/car.js"></script>
+    <script type="text/javascript" src="./scripts/main.js"></script>
+  </body>
+</html>

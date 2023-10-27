@@ -17,28 +17,42 @@ body {
 }
 
 .container-main {
+  margin-top: 20px;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
-  overflow-x: auto;
   white-space: nowrap;
+}
+
+.cars-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .car-container {
   border: 1px solid #ccc;
+  margin-top: 10px;
   border-radius: 8px;
+  min-height: 650px;
+  width: 100%;
   padding: 16px;
+  max-width: 350px;
+  object-fit: cover;
   margin-right: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   text-align: center;
-  min-width: 30%;
-  max-width: 30%;
   white-space: normal;
 }
 
 .car-image {
   max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  width: 100%;
   height: auto;
   border: 1px solid #ddd;
   border-radius: 4px;

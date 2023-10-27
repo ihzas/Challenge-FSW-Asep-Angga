@@ -21,18 +21,19 @@ class App {
 
     console.log(selectedDate);
 
-    console.log(new Date(selectedTime).getHours());
 
     const filterFunction = (car) => {
       console.log(car);
+      console.log(selectedTime);
+      console.log(new Date(Number(selectedTime)).getHours());
       console.log(new Date(car.availableAt).getHours());
-      if (selectedDriverType && car.type !== selectedDriverType) {
-        return false;
-      }
+      // if (selectedDriverType && car.type !== selectedDriverType) {
+      //   return false;
+      // }
       if (selectedDate && new Date(car.availableAt) < new Date(selectedDate)) {
         return false;
       }
-      if (selectedTime && new Date(car.availableAt).getHours() !== new Date(selectedTime).getHours()) {
+      if (selectedTime && new Date(car.availableAt).getHours() !== new Date(Number(selectedTime)).getHours()) {
         return false;
       }
       if (selectedPassengers && car.capacity < parseInt(selectedPassengers)) {

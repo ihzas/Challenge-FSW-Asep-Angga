@@ -1,0 +1,220 @@
+# Car Management API
+
+This API allows you to manage cars, with features including authentication, registration, adding admins, and CRUD operations on car data.
+
+## Table of Contents
+
+- [Setup](#setup)
+- [Authentication](#authentication)
+  - [Login](#login)
+  - [Register](#register)
+  - [Add Admin](#add-admin)
+- [Cars](#cars)
+  - [Get All Cars](#get-all-cars)
+  - [Create Car](#create-car)
+  - [Get Car by ID](#get-car-by-id)
+  - [Update Car](#update-car)
+  - [Delete Car](#delete-car)
+
+## Setup
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+Set up the database:
+
+Create a MySQL database.
+Update config/config.json with your database details.
+Set environment variables:
+
+Create a .env file in the root directory with the following content:
+
+dotenv
+Copy code
+SECRET_KEY=your_secret_key
+Run the application:
+
+bash
+Copy code
+npm start
+The API will be available at http://localhost:3000.
+
+Authentication
+Before making requests to car-related endpoints, you need to authenticate yourself. Use the authentication endpoints to obtain a token.
+
+Login
+Endpoint: POST /auth/login
+
+Request:
+
+json
+Copy code
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+Response:
+
+json
+Copy code
+{
+  "token": "your_access_token"
+}
+Register
+Endpoint: POST /auth/register
+
+Request:
+
+json
+Copy code
+{
+  "username": "new_username",
+  "password": "new_password"
+}
+Response:
+
+json
+Copy code
+{
+  "token": "your_access_token"
+}
+Add Admin
+Endpoint: POST /auth/addAdmin
+
+Request:
+
+json
+Copy code
+{
+  "username": "admin_username",
+  "password": "admin_password"
+}
+Response:
+
+json
+Copy code
+{
+  "message": "Admin added successfully",
+  "admin": {
+    "id": 2,
+    "username": "admin_username",
+    "role": "admin",
+    "createdAt": "2023-01-01T12:00:00Z",
+    "updatedAt": "2023-01-01T12:00:00Z"
+  }
+}
+Cars
+These endpoints allow you to perform CRUD operations on car data.
+
+Get All Cars
+Endpoint: GET /car
+
+Response:
+
+json
+Copy code
+[
+  {
+    "id": 1,
+    "make": "Toyota",
+    "model": "Camry",
+    "createdBy": "admin",
+    "deletedBy": null,
+    "updatedBy": null,
+    "deletedAt": null,
+    "createdAt": "2023-01-01T12:00:00Z",
+    "updatedAt": "2023-01-01T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "make": "Honda",
+    "model": "Civic",
+    "createdBy": "user",
+    "deletedBy": null,
+    "updatedBy": null,
+    "deletedAt": null,
+    "createdAt": "2023-01-02T14:30:00Z",
+    "updatedAt": "2023-01-02T14:30:00Z"
+  }
+]
+Create Car
+Endpoint: POST /car
+
+Request:
+
+json
+Copy code
+{
+  "make": "Ford",
+  "model": "Mustang"
+}
+Response:
+
+json
+Copy code
+{
+  "id": 3,
+  "make": "Ford",
+  "model": "Mustang",
+  "createdBy": "user",
+  "deletedBy": null,
+  "updatedBy": null,
+  "deletedAt": null,
+  "createdAt": "2023-01-03T09:45:00Z",
+  "updatedAt": "2023-01-03T09:45:00Z"
+}
+Get Car by ID
+Endpoint: GET /car/:id
+
+Response:
+
+json
+Copy code
+{
+  "id": 1,
+  "make": "Toyota",
+  "model": "Camry",
+  "createdBy": "admin",
+  "deletedBy": null,
+  "updatedBy": null,
+  "deletedAt": null,
+  "createdAt": "2023-01-01T12:00:00Z",
+  "updatedAt": "2023-01-01T12:00:00Z"
+}
+Update Car
+Endpoint: PUT /car/:id
+
+Request:
+
+json
+Copy code
+{
+  "make": "Toyota",
+  "model": "Corolla"
+}
+Response:
+
+json
+Copy code
+{
+  "id": 1,
+  "make": "Toyota",
+  "model": "Corolla",
+  "createdBy": "admin",
+  "deletedBy": null,
+  "updatedBy": "user",
+  "deletedAt": null,
+  "createdAt": "2023-01-01T12:00:00Z",
+  "updatedAt": "2023-01-04T11:15:00Z"
+}
+Delete Car
+Endpoint: DELETE /car/:id
+
+Response:
+
+json
+Copy code
+{
+  "message": "Car deleted successfully"
+}
